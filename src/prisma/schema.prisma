@@ -1,0 +1,21 @@
+datasource db {
+provider = "postgresql"
+url = env("DATABASE_URL")
+}
+
+generator client {
+provider = "prisma-client-js"
+}
+
+model Transfer {
+id Int @id @default(autoincrement())
+user_id String @unique
+amount Decimal @db.Decimal(15, 2)
+currency String @db.VarChar(3)
+destination_account String @db.VarChar(20)
+provider String? @db.VarChar(50)
+status String @default("pending") @db.VarChar(20)
+attempt_count Int @default(0)
+created_at DateTime @default(now())
+updated_at DateTime @updatedAt
+}

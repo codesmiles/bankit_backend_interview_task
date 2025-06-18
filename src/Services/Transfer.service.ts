@@ -1,50 +1,47 @@
-// src/services/transferService.ts
 import fs from 'fs';
 import path from 'path';
+import { PrismaClient } from '@prisma/client';
 import { providers } from '../Providers';
-import { Job } from 'bull';
+import { transferQueue } from '../Queue';
 
-export const processTransfer = async (job: Job) => {
-    const data = job.data;
-    const maxAttempts = process.env.MAX_ATTEMPTS || 3;
+const prisma = new PrismaClient();
+const LOG_PATH = path.resolve('logs', 'transfer_logs.json');
 
-    while (data.attempt_count < maxAttempts) {
-        const provider = providers[data.provider_index];
-        const success = provider.fn();
+export async function processTransferJob(jobData: any) {
+    const { user_id, amount, currency, destination_account, attempt = 0, providerIndex = 0 } = jobData;
 
-        logAttempt(data.user_id, provider.name, success);
+    const provider = providers[providerIndex];
 
-        if (success) {
-            data.status = 'success';
-            break;
-        }
 
-        data.attempt_count++;
-        if (data.provider_index < providers.length - 1) {
-            data.provider_index++;
-        } else if (data.attempt_count >= maxAttempts) {
-            data.status = 'failed';
-            break;
-        }
-    }
-
-    // Save status for lookup
-    statusStore[data.user_id] = data.status;
-};
-
-const statusStore: Record<string, string> = {};
-
-export const getStatus = (userId: string) => {
-    return statusStore[userId] || 'pending';
-};
-
-const logAttempt = (user_id: string, provider: string, success: boolean) => {
-    const log = {
+    const logEntry = {
         user_id,
-        provider,
-        success,
-        timestamp: new Date().toISOString()
+        provider: provider.name,
+        data: provider,
+        timestamp: new Date().toISOString(),
     };
-    const logPath = path.join(__dirname, '../logs/transfer_logs.json');
-    fs.appendFileSync(logPath, JSON.stringify(log) + ',\n');
-};
+
+    fs.appendFileSync(LOG_PATH, JSON.stringify(logEntry) + ',\n');
+
+    // Check if the transfer already exists and its attempt count is less than the maximum allowed
+    if (provider.fn()) {
+        await prisma.transfer.update({
+            where: { user_id },
+            data: { status: 'success', provider: provider.name },
+        });
+    } else if (attempt < (process.env.MAX_ATTEMPTS ?? 2) && providerIndex < providers.length - 1) {
+        await transferQueue.add('retry-transfer', {
+            ...jobData,
+            attempt: attempt + 1,
+            providerIndex: providerIndex + 1,
+        });
+        await prisma.transfer.update({
+            where: { user_id },
+            data: { attempt_count: { increment: 1 } },
+        });
+    } else {
+        await prisma.transfer.update({
+            where: { user_id },
+            data: { status: 'failed', attempt_count: { increment: 1 } },
+        });
+    }
+}

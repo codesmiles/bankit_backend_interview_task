@@ -2,12 +2,15 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 import express, { Request, Response } from 'express';
-import  { redis } from "./src"
+import  { redis,router } from "./src"
 
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+// Routes config
+app.use("/api/v1", router);
 
 // Redis connection check
 redis.on('connect', () => {
