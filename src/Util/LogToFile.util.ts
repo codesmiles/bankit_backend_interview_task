@@ -1,9 +1,9 @@
 import fs from 'fs';
 import path from 'path';
 
-// Resolve log path relative to the project root
 const LOG_DIR = path.resolve(__dirname, '..', '..', 'logs');
 const LOG_PATH = path.join(LOG_DIR, 'transfer_logs.json');
+
 /**
  * Logs an entry to a JSON file.
  * If the log file or directory does not exist, it creates them.
@@ -11,7 +11,7 @@ const LOG_PATH = path.join(LOG_DIR, 'transfer_logs.json');
  *
  * @param {Object} logEntry - The log entry to be added.
  */
-export function logToFile(logEntry:object) {
+export function logToFile(logEntry: object) {
     try {
         // Create logs directory if it doesn't exist
         if (!fs.existsSync(LOG_DIR)) {
@@ -45,15 +45,6 @@ export function logToFile(logEntry:object) {
         console.log(`Logged entry: ${JSON.stringify(logEntry)}`);
     } catch (err) {
         console.error(`Error logging to file: ${err}`);
-        throw err; 
+        throw err;
     }
 }
-
-// Example usage
-const exampleLogEntry = {
-    timestamp: new Date().toISOString(),
-    message: 'Transfer completed',
-    amount: 100,
-};
-
-logToFile(exampleLogEntry);

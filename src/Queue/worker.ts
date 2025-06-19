@@ -8,5 +8,5 @@ export const transferWorker = new Worker(
     async job => {
         await processTransferJob(job.data);
     },
-    { connection: redis, concurrency: process.env.CONCURRENCY ? parseInt(process.env.CONCURRENCY) : 1 }
+    { connection: redis }
 );

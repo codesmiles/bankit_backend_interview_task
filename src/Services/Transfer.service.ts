@@ -1,13 +1,14 @@
 import { PrismaClient } from '@prisma/client';
 import { providers } from '../Providers';
 import { transferQueue } from '../Queue';
-import { logToFile } from '../Util';
+import { logToFile, QueueNames } from '../Util';
 
 const prisma = new PrismaClient();
 
-export const processTransferJob = async(jobData: any) => {
-    const { user_id, amount, currency, destination_account, attempt = 0, providerIndex = 0 } = jobData;
+export const processTransferJob = async (jobData: any) => {
+    const { id, user_id, attempt = 0, providerIndex = 0 } = jobData;
     const provider = providers[providerIndex];
+
     const logEntry = {
         user_id,
         provider: provider.name,
@@ -18,29 +19,50 @@ export const processTransferJob = async(jobData: any) => {
     // find or create the directory and file
     logToFile(logEntry);
 
-    // Check if the transfer already exists and its attempt count is less than the maximum allowed
-    if (provider.fn()) {
-        console.log("event successful")
-        await prisma.transfer.update({
-            where: { user_id },
-            data: { status: 'completed', provider: provider.name },
-        });
-    } else if (attempt < (process.env.MAX_ATTEMPTS ?? 2) && providerIndex < providers.length - 1) {
-        console.log("event failed, retrying...")
-        await transferQueue.add('retry-transfer', {
-            ...jobData,
-            attempt: attempt + 1,
-            providerIndex: providerIndex + 1,
-        });
-        await prisma.transfer.update({
-            where: { user_id },
-            data: { attempt_count: { increment: 1 } },
-        });
-    } else {
-        console.log("event failed")
-        await prisma.transfer.update({
-            where: { user_id },
-            data: { status: 'failed', attempt_count: { increment: 1 } },
-        });
+    // Check if the transfer already exists and its attempt count is less than the maximum allowed  
+    switch (true) {
+        case provider.fn():
+            console.log("event successful")
+            await prisma.transfer.update({
+                where: { id },
+                data: { status: 'completed', provider: provider.name, attempt_count: { increment: 1 },},
+            });
+            break;
+
+        case attempt < (process.env.MAX_ATTEMPTS ?? 2):
+            console.log("event failed, retrying...")
+            await transferQueue.add(QueueNames.TRANSFER, {
+                ...jobData,
+                attempt: attempt + 1
+            });
+
+            await prisma.transfer.update({
+                where: { id },
+                data: { attempt_count: { increment: 1 } },
+            });
+            break;
+
+        case providerIndex < providers.length - 1:
+            console.log("event failed, trying next provider")
+            await transferQueue.add(QueueNames.TRANSFER, {
+                ...jobData,
+                attempt: 0,
+                providerIndex: providerIndex + 1,
+            });
+
+            await prisma.transfer.update({
+                where: { id },
+                data: { attempt_count: 1, provider: provider.name },
+            });
+            break;
+
+        default:
+            console.log("event failed")
+            await prisma.transfer.update({
+                where: { id },
+                data: { status: 'failed', provider: provider.name },
+            });
+            break;
     }
+
 }

@@ -9,7 +9,7 @@ provider = "prisma-client-js"
 
 model Transfer {
 id Int @id @default(autoincrement())
-user_id String @unique
+user_id String @db.VarChar(36)
 amount Decimal @db.Decimal(15, 2)
 currency String @db.VarChar(3)
 destination_account String @db.VarChar(20)

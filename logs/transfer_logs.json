@@ -1,7 +1,20 @@
 [
   {
-    "timestamp": "2025-06-19T02:24:22.233Z",
-    "message": "Transfer completed",
-    "amount": 100
+    "user_id": "user-13749",
+    "provider": "Provider A",
+    "success": false,
+    "timestamp": "2025-06-19T04:07:56.712Z"
+  },
+  {
+    "user_id": "user-13749",
+    "provider": "Provider A",
+    "success": false,
+    "timestamp": "2025-06-19T04:07:56.976Z"
+  },
+  {
+    "user_id": "user-13749",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T04:07:57.231Z"
   }
 ]
