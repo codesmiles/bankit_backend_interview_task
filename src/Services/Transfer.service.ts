@@ -5,9 +5,9 @@ import { providers } from '../Providers';
 import { transferQueue } from '../Queue';
 
 const prisma = new PrismaClient();
-const LOG_PATH = path.resolve('logs', 'transfer_logs.json');
+const LOG_PATH = path.resolve('..', '..', 'logs', 'transfer_logs.json');
 
-export async function processTransferJob(jobData: any) {
+export const processTransferJob = async(jobData: any) => {
     const { user_id, amount, currency, destination_account, attempt = 0, providerIndex = 0 } = jobData;
 
     const provider = providers[providerIndex];
@@ -16,7 +16,7 @@ export async function processTransferJob(jobData: any) {
     const logEntry = {
         user_id,
         provider: provider.name,
-        data: provider,
+        success: provider.fn(),
         timestamp: new Date().toISOString(),
     };
 
@@ -26,7 +26,7 @@ export async function processTransferJob(jobData: any) {
     if (provider.fn()) {
         await prisma.transfer.update({
             where: { user_id },
-            data: { status: 'success', provider: provider.name },
+            data: { status: 'completed', provider: provider.name },
         });
     } else if (attempt < (process.env.MAX_ATTEMPTS ?? 2) && providerIndex < providers.length - 1) {
         await transferQueue.add('retry-transfer', {

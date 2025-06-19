@@ -14,8 +14,15 @@ amount Decimal @db.Decimal(15, 2)
 currency String @db.VarChar(3)
 destination_account String @db.VarChar(20)
 provider String? @db.VarChar(50)
-status String @default("pending") @db.VarChar(20)
+status TransferStatus @default(pending)
 attempt_count Int @default(0)
 created_at DateTime @default(now())
 updated_at DateTime @updatedAt
+}
+
+enum TransferStatus {
+    pending
+    completed
+    failed
+    cancelled
 }
