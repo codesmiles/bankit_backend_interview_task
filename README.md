@@ -53,6 +53,8 @@ This project contains the solution to the Bankit interview task, which involves 
     npm run test
     ```
 
+Important note: Make sure to have the `.env` file set up with the necessary environment variables, including database connection strings and Redis configuration.
+
 ## Endpoints
 - **POST** `/transfer/initiate`
   - Request Body:

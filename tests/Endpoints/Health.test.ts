@@ -2,12 +2,12 @@
 
 // __tests__/user.test.ts
 import request from 'supertest';
-import { app, ROUTES } from "../../src";
+import { app } from "../../server";
 
 
 describe(`GET /health`, () => {
     it('should return the health of the endpoint', async () => {
-        const response = await request(app).get(ROUTES.health);
+        const response = await request(app).get("/health");
     
         expect(response.status).toBe(200);
         expect(response.body).toEqual({

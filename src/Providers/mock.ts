@@ -9,6 +9,6 @@ export const providers = [
 ];
 // export const providers = [
 //     { name: 'Provider A', fn: () => false },
-//     { name: 'Provider B', fn: () => false },
+//     { name: 'Provider B', fn: () => true },
 //     { name: 'Provider C', fn: () => true },
 // ];

@@ -8,11 +8,12 @@ const prisma = new PrismaClient();
 export const processTransferJob = async (jobData: any) => {
     const { id, user_id, attempt = 0, providerIndex = 0 } = jobData;
     const provider = providers[providerIndex];
+    const provider_called = provider.fn()
 
     const logEntry = {
         user_id,
         provider: provider.name,
-        success: provider.fn(),
+        success: provider_called,
         timestamp: new Date().toISOString(),
     };
 
@@ -21,7 +22,7 @@ export const processTransferJob = async (jobData: any) => {
 
     // Check if the transfer already exists and its attempt count is less than the maximum allowed  
     switch (true) {
-        case provider.fn():
+        case provider_called:
             console.log("event successful")
             await prisma.transfer.update({
                 where: { id },
@@ -29,9 +30,18 @@ export const processTransferJob = async (jobData: any) => {
             });
 
             //TODO dont forget the webhook
+            // const transfer_completed_webhook = {
+            //     user_id,
+            //     transfer_id: id,
+            //     status: 'completed',
+            //     provider: provider.name,
+            //     timestamp: new Date().toISOString(),
+            // }
+
+            
             break;
 
-        case attempt <= parseInt(process.env.MAX_ATTEMPTS as string, 10):
+        case attempt < parseInt(process.env.MAX_ATTEMPTS as string, 10):
             console.log("event failed, retrying...")
             await transferQueue.add(QueueNames.TRANSFER, {
                 ...jobData,

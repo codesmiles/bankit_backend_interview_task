@@ -3,66 +3,48 @@
     "user_id": "user-13749",
     "provider": "Provider A",
     "success": false,
-    "timestamp": "2025-06-19T04:12:53.908Z"
+    "timestamp": "2025-06-19T11:01:26.819Z"
   },
   {
     "user_id": "user-13749",
     "provider": "Provider A",
     "success": false,
-    "timestamp": "2025-06-19T04:12:54.075Z"
+    "timestamp": "2025-06-19T11:01:27.134Z"
   },
   {
     "user_id": "user-13749",
     "provider": "Provider A",
     "success": false,
-    "timestamp": "2025-06-19T04:12:54.185Z"
+    "timestamp": "2025-06-19T11:01:27.374Z"
   },
   {
     "user_id": "user-13749",
     "provider": "Provider A",
     "success": false,
-    "timestamp": "2025-06-19T04:12:54.228Z"
-  },
-  {
-    "user_id": "user-13749",
-    "provider": "Provider A",
-    "success": false,
-    "timestamp": "2025-06-19T04:12:54.373Z"
+    "timestamp": "2025-06-19T11:01:27.517Z"
   },
   {
     "user_id": "user-13749",
     "provider": "Provider B",
-    "success": false,
-    "timestamp": "2025-06-19T04:12:54.858Z"
-  },
-  {
-    "user_id": "user-13749",
-    "provider": "Provider B",
-    "success": false,
-    "timestamp": "2025-06-19T04:12:55.096Z"
-  },
-  {
-    "user_id": "user-13749",
-    "provider": "Provider B",
-    "success": false,
-    "timestamp": "2025-06-19T04:12:55.202Z"
-  },
-  {
-    "user_id": "user-13749",
-    "provider": "Provider B",
-    "success": false,
-    "timestamp": "2025-06-19T04:12:55.716Z"
-  },
-  {
-    "user_id": "user-13749",
-    "provider": "Provider B",
-    "success": false,
-    "timestamp": "2025-06-19T04:12:55.829Z"
-  },
-  {
-    "user_id": "user-13749",
-    "provider": "Provider C",
     "success": true,
-    "timestamp": "2025-06-19T04:12:56.238Z"
+    "timestamp": "2025-06-19T11:01:27.585Z"
+  },
+  {
+    "user_id": "user-13749",
+    "provider": "Provider A",
+    "success": false,
+    "timestamp": "2025-06-19T11:05:21.145Z"
+  },
+  {
+    "user_id": "user-13749",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T11:05:21.276Z"
+  },
+  {
+    "user_id": "user-13749",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T11:05:36.369Z"
   }
 ]
