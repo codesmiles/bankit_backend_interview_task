@@ -8,7 +8,12 @@ export const initiate_transfer = async (req: Request, res: Response) => {
     let successResponse: ResponseBuilder<Object>;
     let errorResponse: ResponseBuilder<unknown>;
     try {
-        const { user_id, amount, currency, destination_account } = req.body;
+        const { user_id, amount, currency, destination_account } = await req.body;
+
+        if (!user_id || !amount || !currency || !destination_account) {
+            errorResponse = new ResponseBuilder(ResponseBuilder.ERROR_MESSAGE, 400, 'Missing required fields');
+            return res.status(400).json(errorResponse.toJson());
+        }
 
         const create_transfer = await prisma.transfer.create({
             data: {

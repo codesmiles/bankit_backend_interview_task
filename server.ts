@@ -15,21 +15,17 @@ app.use("/api/v1", router);
 // Redis connection check
 redis.on('connect', () => {
     console.log('Connected to Redis');
-});
-
-redis.on('ready', async () => {
-    console.log('Redis is ready');
-    try {
-        const pong = await redis.ping();
-        console.log('Ping successful:', pong);
-    } catch (err) {
-        console.error('Ping failed:', err);
-    }
-});
-
-redis.on('error', (err) => {
+}).on('error', (err) => {
     console.error('Redis connection error:', err);
 });
+
+
+// Database connection check
+import { PrismaClient } from '@prisma/client';
+const prisma = new PrismaClient();
+prisma.$connect()
+    .then(() => console.log('Connected to the database'))
+    .catch(err => console.error('Database connection error:', err));
 
 // Api Health Check
 app.get("/health", (req: Request, res: Response) => {

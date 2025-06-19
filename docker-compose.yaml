@@ -2,44 +2,50 @@ version: '3.8'
 
 services:
   redis:
-      image: redis:latest
-      container_name: redis-server
-      restart: always
-      ports:
-        - "6379:6379"
-      volumes:
-        - redis-data:/data
-      command: ["redis-server", "--appendonly", "yes"] 
+    image: redis:latest
+    container_name: redis-server
+    restart: always
+    ports:
+      - "${REDIS_PORT}:6379"
+    volumes:
+      - redis-data:/data
+    command: ["redis-server", "--appendonly", "yes"]
+    networks:
+      - app-network
   
   postgres:
-      image: postgres:15
-      container_name: postgres-db
-      restart: always
-      environment:
-        POSTGRES_DB: myapp
-        POSTGRES_USER: postgres
-        POSTGRES_PASSWORD: password123
-      volumes:
-        - postgres_data:/var/lib/postgresql/data
-        - ./init-scripts:/docker-entrypoint-initdb.d
-      ports:
-        - "5432:5432"
-
-  pgadmin:
-    image: dpage/pgadmin4:latest
-    container_name: pgadmin-gui
+    image: postgres:15
+    container_name: postgres-db
     restart: always
     environment:
-      PGADMIN_DEFAULT_EMAIL: admin@example.com
-      PGADMIN_DEFAULT_PASSWORD: admin123
-      PGADMIN_CONFIG_SERVER_MODE: 'False'
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
-      - pgadmin_data:/var/lib/pgadmin
+      - postgres_data:/var/lib/postgresql/data
+      - ./init-scripts:/docker-entrypoint-initdb.d
     ports:
-      - "8080:80"
+      - "5432:5432"
+    networks:
+      - app-network
+
+  redis-commander:
+    container_name: redis_commander
+    image: rediscommander/redis-commander:latest
+    environment:
+      REDIS_HOSTS: app-network:redis:${REDIS_PORT}
+    ports:
+      - "${REDIS_UI_PORT}:8081"
     depends_on:
-      - postgres
+      - redis
+    networks:
+      - app-network
+
 volumes:
   redis-data:
   postgres_data:
-  pgadmin_data:
+
+
+networks:
+  app-network:
+    driver: bridge
