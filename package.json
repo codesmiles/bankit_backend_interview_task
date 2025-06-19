@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "test": "jest",
+    "test": "jest --detectOpenHandles --forceExit",
     "start": "ts-node ./server.ts",
     "dev": "nodemon ./server.ts"
   },

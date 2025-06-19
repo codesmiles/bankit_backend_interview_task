@@ -46,5 +46,593 @@
     "provider": "Provider A",
     "success": true,
     "timestamp": "2025-06-19T11:05:36.369Z"
+  },
+  {
+    "user_id": "user-13749",
+    "provider": "Provider A",
+    "success": false,
+    "timestamp": "2025-06-19T19:16:58.169Z"
+  },
+  {
+    "user_id": "user-13749",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T19:17:22.644Z"
+  },
+  {
+    "user_id": "user-13749",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T19:17:49.308Z"
+  },
+  {
+    "user_id": "user-13749",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T19:17:52.676Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T20:16:49.224Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T20:16:49.583Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T20:26:13.935Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T20:29:50.379Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T20:29:51.160Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T20:31:50.050Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T20:31:50.640Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": false,
+    "timestamp": "2025-06-19T20:31:51.417Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": false,
+    "timestamp": "2025-06-19T20:46:07.698Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T20:46:08.719Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T20:47:52.087Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T20:47:52.493Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": false,
+    "timestamp": "2025-06-19T20:47:52.982Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": false,
+    "timestamp": "2025-06-19T20:55:16.160Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T20:55:16.595Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": false,
+    "timestamp": "2025-06-19T20:55:17.289Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": false,
+    "timestamp": "2025-06-19T20:57:28.026Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T20:57:28.965Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": false,
+    "timestamp": "2025-06-19T20:59:25.177Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T20:59:26.535Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T21:01:25.124Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T21:01:25.966Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T21:01:26.368Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T21:16:30.109Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T21:16:31.451Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T21:18:46.706Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T21:18:49.742Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T21:21:20.003Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T21:21:20.694Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": false,
+    "timestamp": "2025-06-19T21:21:21.147Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T21:21:54.432Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T21:27:08.353Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T21:27:08.851Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T21:27:09.484Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T21:28:41.612Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": false,
+    "timestamp": "2025-06-19T21:28:42.117Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T21:28:42.307Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": false,
+    "timestamp": "2025-06-19T21:28:42.661Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T21:28:45.506Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T21:31:03.323Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T21:31:04.202Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T21:31:07.415Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T21:33:24.974Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T21:33:25.476Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": false,
+    "timestamp": "2025-06-19T21:33:25.831Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T21:33:26.604Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T21:35:46.141Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": false,
+    "timestamp": "2025-06-19T21:35:46.574Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T21:35:46.832Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T21:35:47.140Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T21:37:22.558Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T21:37:22.839Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T21:37:24.759Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T21:38:56.163Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T21:38:56.260Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T21:38:56.395Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T21:41:07.436Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T21:41:07.667Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T21:41:09.311Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T21:48:05.807Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T21:48:05.944Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": false,
+    "timestamp": "2025-06-19T21:48:06.349Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": false,
+    "timestamp": "2025-06-19T21:48:06.762Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T21:49:16.372Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": false,
+    "timestamp": "2025-06-19T21:49:16.401Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": false,
+    "timestamp": "2025-06-19T21:49:16.429Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider B",
+    "success": true,
+    "timestamp": "2025-06-19T21:49:16.449Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": false,
+    "timestamp": "2025-06-19T21:50:44.320Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T21:50:44.351Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": false,
+    "timestamp": "2025-06-19T21:50:44.376Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T21:50:44.383Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T21:52:22.455Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T21:52:22.780Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T21:52:22.895Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T21:52:46.597Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T21:52:46.835Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T21:52:47.161Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T22:15:40.581Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T22:15:40.703Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T22:15:40.884Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": false,
+    "timestamp": "2025-06-19T22:18:44.126Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": false,
+    "timestamp": "2025-06-19T22:18:44.364Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T22:18:44.858Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T22:19:49.678Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": false,
+    "timestamp": "2025-06-19T22:19:49.932Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T22:19:49.982Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T22:19:51.145Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T22:22:08.570Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": false,
+    "timestamp": "2025-06-19T22:22:08.970Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T22:22:09.062Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": false,
+    "timestamp": "2025-06-19T22:22:09.888Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": false,
+    "timestamp": "2025-06-19T22:25:48.363Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T22:25:48.532Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T22:25:48.700Z"
   }
 ]

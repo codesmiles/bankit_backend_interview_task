@@ -23,26 +23,34 @@ export const processTransferJob = async (jobData: any) => {
     // Check if the transfer already exists and its attempt count is less than the maximum allowed  
     switch (true) {
         case provider_called:
-            console.log("event successful")
+            // event successful
             await prisma.transfer.update({
                 where: { id },
                 data: { status: 'completed', provider: provider.name, attempt_count: { increment: 1 },},
             });
 
             //TODO dont forget the webhook
-            // const transfer_completed_webhook = {
-            //     user_id,
-            //     transfer_id: id,
-            //     status: 'completed',
-            //     provider: provider.name,
-            //     timestamp: new Date().toISOString(),
-            // }
-
+            // fetch(`${process.env.WEBHOOK_URL}/transfer`, {
+            //     method: 'POST',
+            //     headers: {
+            //         'Content-Type': 'application/json',
+            //     },
+            //     body: JSON.stringify({
+            //         user_id,
+            //         transfer_id: id,
+            //         status: 'completed',
+            //         provider: provider.name,
+            //         timestamp: new Date().toISOString(),
+            //     }),
+            // })
+            // .catch((error) => {
+            //     console.error("Webhook error:", error);
+            // })
             
             break;
 
         case attempt < parseInt(process.env.MAX_ATTEMPTS as string, 10):
-            console.log("event failed, retrying...")
+            // event failed, retrying...
             await transferQueue.add(QueueNames.TRANSFER, {
                 ...jobData,
                 attempt: attempt + 1
@@ -55,7 +63,7 @@ export const processTransferJob = async (jobData: any) => {
             break;
 
         case providerIndex < providers.length - 1:
-            console.log("event failed, trying next provider")
+            // event failed, trying next provider
             await transferQueue.add(QueueNames.TRANSFER, {
                 ...jobData,
                 attempt: 0,

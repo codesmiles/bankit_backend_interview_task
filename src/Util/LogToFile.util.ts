@@ -34,7 +34,7 @@ export function logToFile(logEntry: object) {
                 }
             }
         } catch (err) {
-            console.error(`Error reading/parsing log file: ${err}`);
+            // console.error(`Error reading/parsing log file: ${err}`);
             logs = [];
         }
 
@@ -42,7 +42,7 @@ export function logToFile(logEntry: object) {
         logs.push(logEntry);
 
         fs.writeFileSync(LOG_PATH, JSON.stringify(logs, null, 2), 'utf8');
-        console.log(`Logged entry: ${JSON.stringify(logEntry)}`);
+        // console.log(`Logged entry: ${JSON.stringify(logEntry)}`);
     } catch (err) {
         console.error(`Error logging to file: ${err}`);
         throw err;

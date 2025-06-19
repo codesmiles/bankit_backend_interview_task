@@ -2,7 +2,7 @@
 
 // __tests__/user.test.ts
 import request from 'supertest';
-import { app } from "../../server";
+import { app }  from "../../src";
 
 
 describe(`GET /health`, () => {

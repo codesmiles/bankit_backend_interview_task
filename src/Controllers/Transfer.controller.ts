@@ -33,7 +33,7 @@ export const initiate_transfer = async (req: Request, res: Response) => {
             attempt: 0,
             providerIndex: 0,
         });
-        successResponse = new ResponseBuilder(ResponseBuilder.SUCCESS_MESSAGE, 200, { transfer: create_transfer, queue: transfer_queue });
+        successResponse = new ResponseBuilder(ResponseBuilder.SUCCESS_MESSAGE, 200, { transfer: create_transfer, queueId: transfer_queue.id });
         res.status(200).json(successResponse.toJson());
     } catch (error) {
         console.error(error);
@@ -49,7 +49,8 @@ export const get_transfer = async (req: Request, res: Response) => {
         const transfer = await prisma.transfer.findMany({
             where: { user_id: req.params.user_id },
         });
-        if (!transfer) {
+        
+        if (!transfer || transfer.length === 0) {
             errorResponse = new ResponseBuilder(ResponseBuilder.ERROR_MESSAGE, 404, 'Transfer not found');
             return res.status(404).json(errorResponse.toJson());
         }
