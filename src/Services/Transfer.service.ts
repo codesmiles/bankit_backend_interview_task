@@ -27,9 +27,11 @@ export const processTransferJob = async (jobData: any) => {
                 where: { id },
                 data: { status: 'completed', provider: provider.name, attempt_count: { increment: 1 },},
             });
+
+            //TODO dont forget the webhook
             break;
 
-        case attempt < (process.env.MAX_ATTEMPTS ?? 2):
+        case attempt <= parseInt(process.env.MAX_ATTEMPTS as string, 10):
             console.log("event failed, retrying...")
             await transferQueue.add(QueueNames.TRANSFER, {
                 ...jobData,

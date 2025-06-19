@@ -33,7 +33,7 @@ export const initiate_transfer = async (req: Request, res: Response) => {
             attempt: 0,
             providerIndex: 0,
         });
-        successResponse = new ResponseBuilder(ResponseBuilder.SUCCESS_MESSAGE, 200, { transfer: create_transfer, queueId: transfer_queue.id });
+        successResponse = new ResponseBuilder(ResponseBuilder.SUCCESS_MESSAGE, 200, { transfer: create_transfer, queue: transfer_queue });
         res.status(200).json(successResponse.toJson());
     } catch (error) {
         console.error(error);
