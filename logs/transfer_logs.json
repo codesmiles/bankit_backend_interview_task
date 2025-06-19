@@ -634,5 +634,23 @@
     "provider": "Provider A",
     "success": true,
     "timestamp": "2025-06-19T22:25:48.700Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T22:29:45.128Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": false,
+    "timestamp": "2025-06-19T22:29:45.248Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-19T22:29:45.280Z"
   }
 ]

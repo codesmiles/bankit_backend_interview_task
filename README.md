@@ -53,7 +53,9 @@ This project contains the solution to the Bankit interview task, which involves 
     npm run test
     ```
 
-Important note: Make sure to have the `.env` file set up with the necessary environment variables, including database connection strings and Redis configuration.
+Important note: 
+- Make sure to have the `.env` file set up with the necessary environment variables, including database connection strings and Redis configuration.
+- You have to give npm a good level of sudo access so if you run into permission issues, you can use `sudo npm run dev` or `sudo npm run start` to run the application.
 
 ## Endpoints
 - **POST** `/transfer/initiate`
