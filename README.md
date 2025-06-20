@@ -58,9 +58,9 @@ Important note:
 - You have to give npm a good level of sudo access so if you run into permission issues, you can use `sudo npm run dev` or `sudo npm run start` to run the application.
 
 ## Endpoints
-- **POST** `/transfer/initiate`
+- **POST** `/api/v1/transfer/initiate`
   - Request Body:
-    - `from_user_id`: ID of the user initiating the transfer
+    - `user_id`: ID of the user initiating the transfer
     - `amount`: Amount to be transferred
     - `currency`: Currency of the transfer (e.g., USD, EUR)
     - `destination_account`: ID of the user receiving the transfer
@@ -69,4 +69,4 @@ Important note:
     - `attempt_count`: Number of attempts to process the transfer
     - `provider_index`: Index of the provider used for the transfer
     - If the transfer is successful, the provider will send a webhook to this endpoint to update the status of the transfer.
-- **GET** `/transfer/status/:user_id`
+- **GET** `/api/v1/transfer/:user_id`

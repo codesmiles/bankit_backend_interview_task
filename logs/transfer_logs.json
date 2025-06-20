@@ -652,5 +652,47 @@
     "provider": "Provider A",
     "success": true,
     "timestamp": "2025-06-19T22:29:45.280Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": false,
+    "timestamp": "2025-06-20T10:17:24.038Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": false,
+    "timestamp": "2025-06-20T10:17:24.176Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-20T10:17:24.428Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-20T10:17:28.908Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": false,
+    "timestamp": "2025-06-20T11:38:29.642Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": false,
+    "timestamp": "2025-06-20T11:38:34.867Z"
+  },
+  {
+    "user_id": "test_user",
+    "provider": "Provider A",
+    "success": true,
+    "timestamp": "2025-06-20T11:38:34.884Z"
   }
 ]
