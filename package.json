@@ -8,7 +8,7 @@
     "start": "ts-node ./server.ts",
     "dev": "nodemon ./server.ts"
   },
-  "prisma":{
+  "prisma": {
     "schema": "./src/prisma/schema.prisma"
   },
   "keywords": [],
@@ -17,6 +17,7 @@
   "description": "",
   "dependencies": {
     "@prisma/client": "^6.10.0",
+    "amqplib": "^0.10.8",
     "bullmq": "^5.54.2",
     "express": "^5.1.0",
     "ioredis": "^5.6.1",
@@ -25,6 +26,7 @@
     "ts-node": "^10.9.2"
   },
   "devDependencies": {
+    "@types/amqplib": "^0.10.7",
     "@types/express": "^5.0.3",
     "@types/jest": "^30.0.0",
     "@types/node": "^24.0.3",
